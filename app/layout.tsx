@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Archivo, Archivo_Black, Archivo_Narrow, Bowlby_One } from 'next/font/google';
-// @ts-expect-error -- global CSS import is handled by Next.js
 import './globals.css';
 
 const archivo = Archivo({

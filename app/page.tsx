@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'motion/react';
-import { Layout, Gamepad2, Users, Rocket, ArrowRight } from 'lucide-react';
 import MotionButton from '@/components/motion-button';
 
 

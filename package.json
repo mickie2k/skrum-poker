@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "node server.ts",
         "build": "next build",
-        "start": "node server.ts",
+        "start": "cross-env NODE_ENV=production node server.ts",
         "lint": "eslint .",
         "clean": "next clean"
     },
@@ -31,6 +31,7 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "cross-env": "^7.0.3",
         "eslint": "9.39.1",
         "eslint-config-next": "16.0.8",
         "tailwindcss": "4.1.11",
