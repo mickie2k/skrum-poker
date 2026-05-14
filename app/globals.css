@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+    --font-sans: var(--font-sans);
+    --font-display: var(--font-display);
+    --font-number: var(--font-number);
+}
+
+@layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+        @apply tracking-tight;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply h-12 px-8 rounded-full bg-white text-black font-bold shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:scale-105 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+    }
+
+    .btn-secondary {
+        @apply h-12 px-8 rounded-full bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+    }
+
+    .card-poker {
+        @apply w-12 h-16 rounded-md border border-white/10 bg-transparent flex items-center justify-center text-lg font-bold text-neutral-400 transition-all cursor-pointer hover:border-white/30 hover:bg-white/5 hover:text-neutral-100;
+    }
+
+    .card-poker.active {
+        @apply border-2 border-white/50 bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.2)];
+    }
+
+    .glass-panel {
+        @apply bg-[#121212] border border-white/10 rounded-2xl;
+    }
+}

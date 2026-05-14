@@ -1,0 +1,8 @@
+{
+  "name": "Sprint Poker",
+  "description": "A crisp, real-time Scrum Poker planning tool for agile teams to estimate issues efficiently.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
