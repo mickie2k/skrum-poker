@@ -1,20 +1,55 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <h1 align="center">Skrum</h1>
+  <p align="center">Real-time scrum poker for agile teams. Built for speed, clarity, and trust.</p>
 </div>
 
-# Run and deploy your AI Studio app
+## ✨ Features
 
-This contains everything you need to run your app locally.
+- **Real-Time Estimation**: Synchronised voting with Socket.IO for seamless team planning loops.
+- **Easy Room Management**: Create ad-hoc rooms or join existing ones via unique room codes.
+- **Modern Interface**: Designed with Next.js 15, TailwindCSS 4, and Motion for fluid, 60fps animations.
+- **Privacy-First**: No database required—rooms exist in memory and local storage handles your display name.
 
-View your app in AI Studio: https://ai.studio/apps/29000cd4-d675-46ef-86ab-46de4f3770ab
+## 🚀 Tech Stack
 
-## Run Locally
+- **Framework**: Next.js 15 App Router & React 19
+- **Networking**: Express & Socket.IO
+- **Styling**: Tailwind CSS 4
+- **Animations**: Motion (Framer Motion)
+- **Icons**: Lucide React
 
-**Prerequisites:**  Node.js
+## 🛠️ Run Locally
 
+**Prerequisites:** Node.js 20+
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Clone the repository:**
+
+    ```bash
+    git clone git@github.com:mickie2k/poker-planning.git
+    cd poker-planning
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🏗️ Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+## 🧑‍💻 Built By
+
+Built by **[mickie2k](https://mickie2k.com)**.
