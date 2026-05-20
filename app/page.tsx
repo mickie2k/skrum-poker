@@ -53,7 +53,7 @@ export default function Home() {
             <h1 className="text-6xl md:text-8xl xl:text-9xl font-black mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-br from-zinc-100 to-pink-50">
               Skrum
             </h1>
-            <p className="text-lg text-neutral-500 leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg text-neutral-500 leading-relaxed mb-10 max-w-md">
               Real-time scrum poker for agile teams.
               Estimate issues together with a crisp interface built for speed, clarity, and trust.
             </p>

@@ -123,9 +123,9 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
         </div>
       </header>
 
-      <main className="flex-1 flex flex-col lg:flex-row overflow-hidden">
+      <main className="flex-1 flex flex-col-reverse lg:flex-row overflow-hidden">
         {/* Left: Participants Sidebar */}
-        <aside className="lg:w-[320px] bg-[#0c0c0c] border-r border-white/10 flex flex-col p-6 overflow-hidden">
+        <aside className="lg:w-[320px] bg-[#0c0c0c] border-t lg:border-t-0 lg:border-r border-white/10 flex flex-col p-6 overflow-hidden md:h-auto lg:h-auto">
           <div className="mb-8">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-mono text-neutral-200 px-1.5 py-0.5 bg-white/10 rounded uppercase">Active Session</span>
@@ -266,20 +266,20 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
           </div>
 
           {/* Controls Footer */}
-          <div className="h-44 border-t border-white/5 bg-[#0c0c0c] flex flex-col items-center justify-center px-8 relative">
-            <div className="absolute top-0 -translate-y-1/2 flex items-center justify-center">
+          <div className="min-h-[11rem] h-auto border-t border-white/5 bg-[#0c0c0c] flex flex-col items-center justify-center px-4 md:px-8 py-12 md:py-0 relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
               {!revealed ? (
                 <button
                   onClick={handleReveal}
                   disabled={participants.filter(p => p.vote).length === 0}
-                  className="px-10 py-3.5 cursor-pointer bg-white border border-white/10 text-black uppercase text-base rounded-full hover:bg-neutral-100 hover:text-black hover:scale-105 active:scale-95 transition-all disabled:bg-neutral-800 disabled:border-white/5 disabled:text-neutral-700 disabled:pointer-events-none shadow-2xl font-display font-normal tracking-widest"
+                  className="px-8 md:px-10 py-3 md:py-3.5 cursor-pointer bg-white border border-white/10 text-black uppercase text-sm md:text-base rounded-full hover:bg-neutral-100 hover:text-black hover:scale-105 active:scale-95 transition-all disabled:bg-neutral-800 disabled:border-white/5 disabled:text-neutral-700 disabled:pointer-events-none shadow-2xl font-display font-normal tracking-widest whitespace-nowrap"
                 >
                   Reveal Round
                 </button>
               ) : (
                 <button
                   onClick={handleReset}
-                  className="px-10 py-3.5 bg-white border border-white/10 cursor-pointer text-black font-normal uppercase text-base  rounded-full hover:bg-neutral-100 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-2xl font-display tracking-widest"
+                  className="px-8 md:px-10 py-3 md:py-3.5 bg-white border border-white/10 cursor-pointer text-black font-normal uppercase text-sm md:text-base rounded-full hover:bg-neutral-100 hover:text-black hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-2xl font-display tracking-widest whitespace-nowrap"
                 >
                   <RotateCcw size={16} />
                   Start new voting
@@ -287,22 +287,22 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
               )}
             </div>
 
-            <div className="flex flex-wrap gap-2 justify-center max-w-4xl pt-4">
+            <div className="flex flex-wrap gap-2 justify-center max-w-4xl pt-2 md:pt-4">
               {CARDS.map((card) => (
                 <button
                   key={card}
                   onClick={() => handleVote(card)}
                   className={cn(
-                    "card-poker",
+                    "card-poker !w-10 !h-14 md:!w-12 md:!h-16 text-base md:text-lg",
                     "font-number",
                     myVote === card && "active"
                   )}
                 >
-                  {card === '☕' ? <Coffee size={18} /> : card}
+                  {card === '☕' ? <Coffee size={myVote === card ? 20 : 18} /> : card}
                 </button>
               ))}
             </div>
-            <p className="mt-4 text-xs text-neutral-400 uppercase tracking-[0.25em] font-bold">Select Your Estimate</p>
+            <p className="mt-4 text-[10px] md:text-xs text-neutral-400 uppercase tracking-[0.2em] md:tracking-[0.25em] font-bold">Select Your Estimate</p>
           </div>
         </section>
       </main>
@@ -314,7 +314,7 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed bottom-48 right-8 bg-[#0c0c0c] border border-white/10 text-white px-5 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-3"
+            className="fixed bottom-12 md:bottom-48 right-4 md:right-8 bg-[#0c0c0c] border border-white/10 text-white px-5 py-3 rounded-xl shadow-2xl z-50 flex items-center gap-3"
           >
             <div className="w-2 h-2 rounded-full bg-white"></div>
             <span className="text-base font-medium">Link copied to clipboard</span>
